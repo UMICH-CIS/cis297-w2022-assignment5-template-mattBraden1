@@ -47,18 +47,26 @@ namespace DisplayTable
                 MessageBox.Show("FirstName and LastName must contain values", "Entity Validation Exception");
             }
         }
-
+        /// <summary>
+        /// Matthew Braden, Winter 2022
+        /// Upon all new data put into the text box, updates the search for the query
+        /// </summary>
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
             var authorQuery =
                 from author in dbcontext.Authors
                 where author.LastName.StartsWith(searchBar.Text)
+                orderby author.LastName, author.FirstName
                 select author;
             authorBindingSource.DataSource = authorQuery.ToList();
             authorBindingSource.MoveFirst();
             bindingNavigatorAddNewItem.Enabled = false;
             bindingNavigatorDeleteItem.Enabled = false;
         }
+        /// <summary>
+        /// Matthew Braden, Winter 2022
+        /// When the user clicks the button, resets the search and allows data manipulation again
+        /// </summary>
         private void searchButton_Click(object sender, EventArgs e)
         {
             searchBar.Text = "";

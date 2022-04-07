@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksExamples", "BooksExamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayTable", "DisplayTable\DisplayTable.csproj", "{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayBooks", "DisplayBooks\DisplayBooks.csproj", "{774C2A1B-42E1-4281-AA9E-5DA7E4041D19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{82B67151-4980-476C-B36C-EA0571AC5C4C} = {82B67151-4980-476C-B36C-EA0571AC5C4C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774C2A1B-42E1-4281-AA9E-5DA7E4041D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774C2A1B-42E1-4281-AA9E-5DA7E4041D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774C2A1B-42E1-4281-AA9E-5DA7E4041D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774C2A1B-42E1-4281-AA9E-5DA7E4041D19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
