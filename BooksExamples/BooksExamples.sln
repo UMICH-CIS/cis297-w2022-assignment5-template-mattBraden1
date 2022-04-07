@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BooksExamples", "BooksExamp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayTable", "DisplayTable\DisplayTable.csproj", "{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayQueryResult", "DisplayQueryResult\DisplayQueryResult.csproj", "{40A5E243-1A0B-427C-8C2A-209BDF7D90DE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB7CA3B-EE25-4762-864A-F1040C0B9F7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{40A5E243-1A0B-427C-8C2A-209BDF7D90DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40A5E243-1A0B-427C-8C2A-209BDF7D90DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40A5E243-1A0B-427C-8C2A-209BDF7D90DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40A5E243-1A0B-427C-8C2A-209BDF7D90DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
