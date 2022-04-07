@@ -13,25 +13,15 @@ namespace DisplayTable
 {
     public partial class DisplayAuthorsTable : Form
     {
+        //Entity Framework DbContext
+        private BooksExamples.BooksEntities dbcontext = new BooksExamples.BooksEntities();
         public DisplayAuthorsTable()
         {
             InitializeComponent();
-        }
-
-        //Entity Framework DbContext
-        private BooksExamples.BooksEntities dbcontext = new BooksExamples.BooksEntities();
-        //load data from database into DataGridView
-        private void DisplayAuthorsTable_Load(object sender, EventArgs e)
-        {
-            //load Authors table ordered by LastName then FirstName
-            dbcontext.Authors
-                .OrderBy(author => author.LastName)
-                .ThenBy(author => author.FirstName)
-                .Load();
-            //specify datasource for authorBindingSource
             authorBindingSource.DataSource = dbcontext.Authors.Local;
-
         }
+
+        
         private void authorBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
             //load Authors table ordered by LastName then FirstName
@@ -40,7 +30,7 @@ namespace DisplayTable
                 .ThenBy(author => author.FirstName)
                 .Load();
             //specify datasource for authorBindingSource
-            authorBindingSource.DataSource = dbcontext.Authors.Local;
+            
         }
 
         
@@ -56,6 +46,26 @@ namespace DisplayTable
             {
                 MessageBox.Show("FirstName and LastName must contain values", "Entity Validation Exception");
             }
+        }
+
+        private void searchBar_TextChanged(object sender, EventArgs e)
+        {
+            var authorQuery =
+                from author in dbcontext.Authors
+                where author.LastName.StartsWith(searchBar.Text)
+                select author;
+            authorBindingSource.DataSource = authorQuery.ToList();
+            authorBindingSource.MoveFirst();
+            bindingNavigatorAddNewItem.Enabled = false;
+            bindingNavigatorDeleteItem.Enabled = false;
+        }
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            searchBar.Text = "";
+            authorBindingSource.DataSource = dbcontext.Authors.Local;
+            authorBindingSource.MoveFirst();
+            bindingNavigatorAddNewItem.Enabled = true;
+            bindingNavigatorDeleteItem.Enabled = true;
         }
     }
 }
